@@ -13,7 +13,7 @@ from transformers import (
 from torch.utils.data import Dataset
 from sklearn.utils.class_weight import compute_class_weight
 
-HUGGING_FACE_TOKEN = "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" 
+HUGGING_FACE_TOKEN = "token" 
 word_separator_token = "@"
 
 class CompoundSegmentationDataset(Dataset):
