@@ -5,6 +5,6 @@ def remove_empty_lines(input_file, output_file):
                 outfile.write(line)
 
 # Usage
-input_file = 'validation_set_git.txt'  # Replace with your input file path
-output_file = 'val_final_git.txt'  # Replace with your desired output file path
+input_file = 'in.txt'  # Replace with your input file path
+output_file = 'out.txt'  # Replace with your desired output file path
 remove_empty_lines(input_file, output_file)
