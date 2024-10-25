@@ -87,7 +87,7 @@ def compute_metrics(eval_pred, clf_metrics):
 
 def main(lang):
     lang = "afrikaans"
-    model_id = "./afro-xlmr-mini"
+    model_id = "model-id"
     tokenizer = AutoTokenizer.from_pretrained(model_id, token=HUGGING_FACE_TOKEN)
     model = AutoModelForSequenceClassification.from_pretrained(model_id, num_labels=2, token=HUGGING_FACE_TOKEN)
 
@@ -100,7 +100,7 @@ def main(lang):
     clf_metrics = evaluate.combine(["accuracy", "f1", "precision", "recall"])
 
     training_args = TrainingArguments(
-        output_dir=f"/home/jdiegaardt/lustre/NLP_afri/out/trained-model-{lang}-def",
+        output_dir=f"/path/to/model/save",
         learning_rate=2e-5,
         per_device_train_batch_size=16,
         per_device_eval_batch_size=16,
@@ -139,10 +139,10 @@ def main(lang):
     torch.cuda.synchronize()  # Ensure all operations are completed
 
     # Save the fine-tuned model and tokenizer after training
-    model.save_pretrained(f"/home/jdiegaardt/lustre/NLP_afri/out/fine-tuned-model-{lang}-def")
-    tokenizer.save_pretrained(f"/home/jdiegaardt/lustre/NLP_afri/out/fine-tuned-tokenizer-{lang}-def")
+    model.save_pretrained(f"/path/to/model/save")
+    tokenizer.save_pretrained(f"/path/to/model/save")
 
-    print(f"Fine-tuned model and tokenizer saved in /out/fine-tuned-model-{lang}-def and /out/fine-tuned-tokenizer-{lang}-def")
+    print(f"Fine-tuned model and tokenizer saved in /path/to/model/save and /path/to/model/save")
 
 if __name__ == "__main__":
     for lang in ("afrikaans",):
