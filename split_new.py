@@ -89,6 +89,6 @@ if __name__ == "__main__":
 
     # Save the sets to their respective files
     save_sets_to_files(train_set, val_set, test_set, 
-                       "train_set_git.txt", "validation_set_git.txt", "test_set_git.txt")
+                       "train_set.txt", "validation_set.txt", "test_set.txt")
 
     print("Words have been grouped, processed, and distributed into train, validation, and test sets.")
