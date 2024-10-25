@@ -6,7 +6,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from torch.utils.data import DataLoader, Dataset
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
-HUGGING_FACE_TOKEN = "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"
+HUGGING_FACE_TOKEN = "token"
 
 class CompoundSegmentationDataset(Dataset):
     def __init__(self, file_path, tokenizer, max_length=128):
@@ -103,7 +103,7 @@ def evaluate_model(model, dataset, tokenizer, device):
 
 def test_fine_tuned_model(lang):
     # Load the fine-tuned model and tokenizer
-    model_path = f"/home/jdiegaardt/lustre/NLP_afri/out/trained-model-{lang}-def"
+    model_path = f"/path/to/model"
     tokenizer = AutoTokenizer.from_pretrained(model_path, token=HUGGING_FACE_TOKEN)
     model = AutoModelForSequenceClassification.from_pretrained(model_path, token=HUGGING_FACE_TOKEN)
     
