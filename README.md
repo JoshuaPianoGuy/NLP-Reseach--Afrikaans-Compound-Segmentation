@@ -1,4 +1,4 @@
-# NLP-Reseach--Afrikaans-Compound-Segmentation
+# NLP-Research--Afrikaans-Compound-Segmentation
 ## Usage
 Code for semester long research project that looked at using pre-trained language models for Afrikaans compound segmentation.
 
